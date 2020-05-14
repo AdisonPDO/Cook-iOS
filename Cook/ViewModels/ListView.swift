@@ -38,74 +38,91 @@ struct ListView: View {
     var titleName : String
     var searchBarActiv : Bool
     var pickerSect : Bool
+    @State var segInt = 1
     init(colorUi : UIColor, baseColor : Color, titleName : String, searchBarActiv : Bool, pickerSect : Bool) {
         self.baseColor = baseColor
         self.titleName = titleName
         self.searchBarActiv = searchBarActiv
         self.baseColorUi = colorUi
         self.pickerSect = pickerSect
-           
-            let navigationBarAppearance = UINavigationBarAppearance()
-
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        
         
         navigationBarAppearance.backgroundColor = colorUi
-            
+        
         navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font : UIFont.systemFont(ofSize: 30.0)]
-          
+        
+        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+    }
+    
+    @State private var Results = [Result]()
+    @State var search = ""
+    @State var segSearch = "Pomm"
+    var body: some View {
+        
+        return NavigationView{
+            VStack{
+                if searchBarActiv {
+                    SearchBar(text: $search)
+                    ForEach(recipeList.filter({self.search.isEmpty ? true :  $0.name.contains(self.search)}).chunked(into: 2), id: \.self) { recipeChunk in
+                        self.cardGenerate(recipeChunk: recipeChunk)
+                    }
+                } else {
+                    if self.pickerSect{
+                        Picker(selection: self.$segInt, label: Text("")){
+                            Text("Ingrédients").tag(0)
+                            Text("Recettes").tag(1)
+                        }.frame(width: 300.0).pickerStyle(SegmentedPickerStyle())
+                            .padding()
+                    }
+                    if segInt == 1 {
+                        ForEach(recipeList.filter({ self.segSearch.isEmpty ? true : $0.ingredients.map{$0.name}.contains{$0.lowercased().hasPrefix(self.segSearch.lowercased())}}).chunked(into: 2), id: \.self){ recipeChunk in
+                            self.cardGenerate(recipeChunk: recipeChunk)
+                            
+                        }
+                        
+                    } else {
+                        TextField("", text: $segSearch)
+                    }
+                }
+                
+                
+                Spacer()
+                
+                
+            }
+            .navigationBarTitle(Text(titleName).font(.title), displayMode: .inline)
+        }
+        .onAppear{
+            let navigationBarAppearance = UINavigationBarAppearance()
+            
+            
+            navigationBarAppearance.backgroundColor = self.baseColorUi
+            
+            navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font : UIFont.systemFont(ofSize: 30.0)]
+            
             navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
+            
             
             UINavigationBar.appearance().standardAppearance = navigationBarAppearance
             UINavigationBar.appearance().compactAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        }
     }
-            
-    @State private var Results = [Result]()
-    @State var segInt = 1
-    @State var search = ""
-    var body: some View {
-        NavigationView{
-        VStack{
-            if searchBarActiv {
-                SearchBar(text: $search)
-            }
-       
-            if pickerSect{
-                Picker(selection: $segInt, label: Text("")){
-                    Text("Ingrédients").tag(0)
-                    Text("Recettes").tag(1)
-                }.frame(width: 300.0).pickerStyle(SegmentedPickerStyle())
-                    .padding()
-            }
-
-            ForEach(0..<recipeList.count) {index  in
-                HStack{
-                    CardView(recipeName: recipeList[index][0].name, like: false, bordColor: self.baseColor, recipePic: recipeList[index][0].pic)
-                    CardView(recipeName: recipeList[index][1].name, like: true, bordColor: self.baseColor, recipePic: recipeList[index][1].pic )
-                }
-                
+    
+    func cardGenerate(recipeChunk : [recipeType]) -> some View{
+        return  HStack{
+            ForEach(recipeChunk, id: \.self) {
+                recipe in
+                CardView(recipeName: recipe.name, like: false, bordColor: self.baseColor, recipePic: recipe.pic)
                 
             }
-            Spacer()
-            
-            
-        }
-        .navigationBarTitle(Text(titleName).font(.title), displayMode: .inline)
-        }
-        .onAppear{
-            let navigationBarAppearance = UINavigationBarAppearance()
-
-                   
-            navigationBarAppearance.backgroundColor = self.baseColorUi
-                       
-                   navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font : UIFont.systemFont(ofSize: 30.0)]
-                     
-                       navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
-                       
-                       UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-                       UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-                       UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
     }
 }

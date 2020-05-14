@@ -19,6 +19,11 @@
 		B343EB86246AA63000531296 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB85246AA63000531296 /* TabBarView.swift */; };
 		B343EB89246AA66B00531296 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB88246AA66B00531296 /* Recipe.swift */; };
 		B343EB8B246AA69600531296 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB8A246AA69600531296 /* SearchBar.swift */; };
+		B343EB8F246BD9B700531296 /* SegController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB8E246BD9B700531296 /* SegController.swift */; };
+		B343EB93246C2BDB00531296 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB92246C2BDB00531296 /* Profil.swift */; };
+		B354EE87246D2F3100E22F76 /* UserPref+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */; };
+		B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */; };
+		B3960F25246C332000CBB979 /* tete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960F24246C332000CBB979 /* tete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		B343EB85246AA63000531296 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		B343EB88246AA66B00531296 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		B343EB8A246AA69600531296 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B343EB8E246BD9B700531296 /* SegController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegController.swift; sourceTree = "<group>"; };
+		B343EB92246C2BDB00531296 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
+		B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3960F24246C332000CBB979 /* tete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +62,8 @@
 		B343EB5C246AA54F00531296 = {
 			isa = PBXGroup;
 			children = (
+				B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */,
+				B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */,
 				B343EB67246AA54F00531296 /* Cook */,
 				B343EB66246AA54F00531296 /* Products */,
 			);
@@ -95,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B343EB7F246AA56200531296 /* ListView.swift */,
+				B343EB8E246BD9B700531296 /* SegController.swift */,
 				B343EB82246AA5E100531296 /* CardView.swift */,
 			);
 			path = ViewModels;
@@ -103,6 +116,8 @@
 		B343EB84246AA60500531296 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B343EB92246C2BDB00531296 /* Profil.swift */,
+				B3960F24246C332000CBB979 /* tete.swift */,
 				B343EB85246AA63000531296 /* TabBarView.swift */,
 			);
 			path = View;
@@ -188,11 +203,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B343EB93246C2BDB00531296 /* Profil.swift in Sources */,
 				B343EB69246AA54F00531296 /* AppDelegate.swift in Sources */,
+				B354EE87246D2F3100E22F76 /* UserPref+CoreDataClass.swift in Sources */,
 				B343EB6E246AA54F00531296 /* Cook.xcdatamodeld in Sources */,
 				B343EB86246AA63000531296 /* TabBarView.swift in Sources */,
+				B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */,
 				B343EB80246AA56200531296 /* ListView.swift in Sources */,
 				B343EB70246AA54F00531296 /* ContentView.swift in Sources */,
+				B343EB8F246BD9B700531296 /* SegController.swift in Sources */,
+				B3960F25246C332000CBB979 /* tete.swift in Sources */,
 				B343EB8B246AA69600531296 /* SearchBar.swift in Sources */,
 				B343EB83246AA5E100531296 /* CardView.swift in Sources */,
 				B343EB6B246AA54F00531296 /* SceneDelegate.swift in Sources */,

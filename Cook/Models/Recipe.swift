@@ -7,14 +7,14 @@
 //
 import SwiftUI
 
-struct ingredientsType : Identifiable {
+struct ingredientsType : Hashable {
     var id = UUID()
     var name : String
     var measured : String?
     var content : Double?
 }
 
-struct recipeType : Identifiable{
+struct recipeType : Hashable{
     var id = UUID()
     var name : String
     var ingredients = [ingredientsType]()
@@ -25,8 +25,16 @@ struct recipeType : Identifiable{
     var pic : String
 }
 
+extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        return stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
+        }
+    }
+}
 
-var recipeList = [[
+
+var recipeList = [
     recipeType(name: "Gratin", ingredients: [
         ingredientsType(name: "Pommes de terre", measured: "Kg", content: 1.5),
         ingredientsType(name: "Gousses d'ail", measured: "", content: 2),
@@ -58,4 +66,6 @@ var recipeList = [[
             "Couvrez et faites cuire le tout à feu doux de 20 à 25 min.",
             "Égouttez, retirez le bouquet garni, disposez sur un plat avec un peu de persil haché et servez aussitôt."],
                                                              time: "55 min", part: "4", calories: "168cal - 100g", pic : "saucisse")
-]]
+]
+
+var vegetablePref = ["Tomate","Pomme de terre", "Aubergine", "Asperge", "Navet", "Banane", "Concombre"]
