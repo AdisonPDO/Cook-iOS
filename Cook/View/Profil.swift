@@ -22,7 +22,9 @@ struct Profil: View {
     @State var banPref = 0
     @State var addPref = ""
     @State var isShowingAlert = false
-    
+    @Environment(\.managedObjectContext) var MOC
+    @FetchRequest(entity: UserPref.entity(), sortDescriptors: []) var UserPrefs : FetchedResults<UserPref>
+
     
     
     init(colorUi : UIColor, baseColor : Color, titleName : String) {
@@ -56,10 +58,14 @@ struct Profil: View {
                         .font(.title)
                     
                     
-                    ForEach(tablePref, id: \.id){ pref in
+                    ForEach(UserPrefs, id: \.self){ pref in
                         VStack{
-                            Toggle(isOn: pref.$not){
-                                Text(pref.pref)
+                            HStack{
+                                Text(pref.name)
+                                Spacer()
+                                ToggleViewProfil(pref: pref)
+                                
+                                
                             }
                             Divider()
                         }
@@ -75,8 +81,14 @@ struct Profil: View {
                             if self.addPref.isEmpty {
                                 self.isShowingAlert.toggle()
                             } else {
-                                let newPref = pref(pref: self.addPref, not: true)
-                                tablePref.append(newPref)
+                                let newPref = UserPref.init(context: self.MOC)
+                                newPref.name = self.addPref
+                                newPref.ban = true
+                                do {
+                                    try self.MOC.save()
+                                } catch {
+                                    print(error)
+                                }
                                 self.addPref = ""
                             }
                             

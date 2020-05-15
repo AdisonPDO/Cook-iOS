@@ -23,7 +23,7 @@
 		B343EB93246C2BDB00531296 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB92246C2BDB00531296 /* Profil.swift */; };
 		B354EE87246D2F3100E22F76 /* UserPref+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */; };
 		B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */; };
-		B3960F25246C332000CBB979 /* tete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3960F24246C332000CBB979 /* tete.swift */; };
+		B354EEAD246E9A3F00E22F76 /* ToggleViewProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EEAC246E9A3F00E22F76 /* ToggleViewProfil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		B343EB92246C2BDB00531296 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B3960F24246C332000CBB979 /* tete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tete.swift; sourceTree = "<group>"; };
+		B354EEAC246E9A3F00E22F76 /* ToggleViewProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewProfil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B343EB92246C2BDB00531296 /* Profil.swift */,
-				B3960F24246C332000CBB979 /* tete.swift */,
+				B354EEAC246E9A3F00E22F76 /* ToggleViewProfil.swift */,
 				B343EB85246AA63000531296 /* TabBarView.swift */,
 			);
 			path = View;
@@ -211,8 +211,8 @@
 				B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */,
 				B343EB80246AA56200531296 /* ListView.swift in Sources */,
 				B343EB70246AA54F00531296 /* ContentView.swift in Sources */,
+				B354EEAD246E9A3F00E22F76 /* ToggleViewProfil.swift in Sources */,
 				B343EB8F246BD9B700531296 /* SegController.swift in Sources */,
-				B3960F25246C332000CBB979 /* tete.swift in Sources */,
 				B343EB8B246AA69600531296 /* SearchBar.swift in Sources */,
 				B343EB83246AA5E100531296 /* CardView.swift in Sources */,
 				B343EB6B246AA54F00531296 /* SceneDelegate.swift in Sources */,
