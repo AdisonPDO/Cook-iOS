@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1121ED0F247512A200990AC3 /* cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121ED0E247512A200990AC3 /* cards.swift */; };
+		1121ED13247515EB00990AC3 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121ED12247515EB00990AC3 /* extension.swift */; };
+		1121ED152475163700990AC3 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1121ED142475163700990AC3 /* SegmentedControl.swift */; };
 		B343EB69246AA54F00531296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB68246AA54F00531296 /* AppDelegate.swift */; };
 		B343EB6B246AA54F00531296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB6A246AA54F00531296 /* SceneDelegate.swift */; };
 		B343EB6E246AA54F00531296 /* Cook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B343EB6C246AA54F00531296 /* Cook.xcdatamodeld */; };
@@ -19,7 +22,6 @@
 		B343EB86246AA63000531296 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB85246AA63000531296 /* TabBarView.swift */; };
 		B343EB89246AA66B00531296 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB88246AA66B00531296 /* Recipe.swift */; };
 		B343EB8B246AA69600531296 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB8A246AA69600531296 /* SearchBar.swift */; };
-		B343EB8F246BD9B700531296 /* SegController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB8E246BD9B700531296 /* SegController.swift */; };
 		B343EB93246C2BDB00531296 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B343EB92246C2BDB00531296 /* Profil.swift */; };
 		B354EE87246D2F3100E22F76 /* UserPref+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */; };
 		B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */; };
@@ -27,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1121ED0E247512A200990AC3 /* cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cards.swift; sourceTree = "<group>"; };
+		1121ED12247515EB00990AC3 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		1121ED142475163700990AC3 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		B343EB65246AA54F00531296 /* Cook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B343EB68246AA54F00531296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B343EB6A246AA54F00531296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +46,6 @@
 		B343EB85246AA63000531296 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		B343EB88246AA66B00531296 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		B343EB8A246AA69600531296 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		B343EB8E246BD9B700531296 /* SegController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegController.swift; sourceTree = "<group>"; };
 		B343EB92246C2BDB00531296 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -106,8 +110,8 @@
 		B343EB81246AA59B00531296 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1121ED0E247512A200990AC3 /* cards.swift */,
 				B343EB7F246AA56200531296 /* ListView.swift */,
-				B343EB8E246BD9B700531296 /* SegController.swift */,
 				B343EB82246AA5E100531296 /* CardView.swift */,
 			);
 			path = ViewModels;
@@ -128,6 +132,8 @@
 			children = (
 				B343EB88246AA66B00531296 /* Recipe.swift */,
 				B343EB8A246AA69600531296 /* SearchBar.swift */,
+				1121ED12247515EB00990AC3 /* extension.swift */,
+				1121ED142475163700990AC3 /* SegmentedControl.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,10 +215,12 @@
 				B343EB6E246AA54F00531296 /* Cook.xcdatamodeld in Sources */,
 				B343EB86246AA63000531296 /* TabBarView.swift in Sources */,
 				B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */,
+				1121ED13247515EB00990AC3 /* extension.swift in Sources */,
 				B343EB80246AA56200531296 /* ListView.swift in Sources */,
 				B343EB70246AA54F00531296 /* ContentView.swift in Sources */,
 				B354EEAD246E9A3F00E22F76 /* ToggleViewProfil.swift in Sources */,
-				B343EB8F246BD9B700531296 /* SegController.swift in Sources */,
+				1121ED0F247512A200990AC3 /* cards.swift in Sources */,
+				1121ED152475163700990AC3 /* SegmentedControl.swift in Sources */,
 				B343EB8B246AA69600531296 /* SearchBar.swift in Sources */,
 				B343EB83246AA5E100531296 /* CardView.swift in Sources */,
 				B343EB6B246AA54F00531296 /* SceneDelegate.swift in Sources */,
@@ -284,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -338,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
