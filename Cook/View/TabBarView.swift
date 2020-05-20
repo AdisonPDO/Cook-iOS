@@ -15,7 +15,7 @@ struct TabBarView: View {
                     Image(systemName: "list.bullet")
                     Text("Recettes")
             }.tag(0)
-            ListView(colorUi: .systemPurple, baseColor: Color(UIColor.systemPurple), titleName: "Favoris", searchBarActiv: true, pickerSect: false)
+            ListView(colorUi: .systemPurple, baseColor: Color(UIColor.systemPurple), titleName: "Favoris", searchBarActiv: true, pickerSect: false).foregroundColor(.pink)
                 .tabItem{
                     Image(systemName: "heart.fill")
                     Text("Favoris")
