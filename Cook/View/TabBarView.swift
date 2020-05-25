@@ -25,7 +25,7 @@ struct TabBarView: View {
                     Image(systemName: "clock.fill")
                     Text("Historique")
             }.tag(2)
-            Profil(colorUi: UIColor.systemPink, baseColor: Color(UIColor.systemPink), titleName: "Profil")
+            Profil()
                 .tabItem{
                     Image(systemName: "person.fill")
                     Text("Profil")

@@ -68,4 +68,4 @@ var recipeList = [
                                                              time: "55 min", part: "4", calories: "168cal - 100g", pic : "saucisse")
 ]
 
-var vegetablePref = ["Tomate","Pomme de terre", "Aubergine", "Asperge", "Navet", "Banane", "Concombre"]
+var vegetablePref = ["Tomate","Pomme de terre","Aubergine", "Asperge","Navet","Banane","Concombre","Courgette","Saumon","Sardine","Morue","Cabillau"]

@@ -8,134 +8,155 @@
 
 import SwiftUI
 
-struct pref {
-    var id = UUID()
-    var pref : String
-    @State var not : Bool
-}
-var tablePref = [ pref(pref: "sucre", not: true), pref(pref: "gluten", not: false), pref(pref: "sel", not: true)]
-
 struct Profil: View {
-    var baseColor : Color
-    var baseColorUi : UIColor
-    var titleName : String
-    @State var banPref = 0
-    @State var addPref = ""
-    @State var isShowingAlert = false
-    @Environment(\.managedObjectContext) var MOC
-    @FetchRequest(entity: UserPref.entity(), sortDescriptors: []) var UserPrefs : FetchedResults<UserPref>
-
+    
+    @State private var searchIntolerance = ""
+    @State private var showCancelButton: Bool = false
+    @State private var toggle1 = true
+    @State private var toggle2 = true
+    @State private var toggle3 = true
+    @State private var bansearch:  String = ""
+    @State private var banfood = 0
+    @State private var intolerances = [String] ()
     
     
-    init(colorUi : UIColor, baseColor : Color, titleName : String) {
-        self.baseColor = baseColor
-        self.titleName = titleName
-        self.baseColorUi = colorUi
-        
-        
-        let navigationBarAppearance = UINavigationBarAppearance()
-        
-        
-        navigationBarAppearance.backgroundColor = colorUi
-        
-        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font : UIFont.systemFont(ofSize: 30.0)]
-        
-        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
-        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-    }
     var body: some View {
-        NavigationView{
+        
+        NavigationView {
             
-            VStack {
-                VStack(alignment : .leading) {
+            VStack(spacing: 20) {
+                IntoleranceView(toogle1: $toggle1, toogle2: $toggle2, toogle3: $toggle3)
+                VStack(alignment: .leading,spacing: 15){
+                    
                     Text("Intolérances/Allergies")
-                        .fontWeight(.light)
-                        .foregroundColor(Color.pink)
-                        .font(.title)
-                    
-                    
-                    ForEach(UserPrefs, id: \.self){ pref in
-                        VStack{
-                            HStack{
-                                Text(pref.name)
-                                Spacer()
-                                ToggleViewProfil(pref: pref)
-                                
-                                
-                            }
-                            Divider()
-                        }
-                        
-                    }
-                    Text("Autres intolérances")
                         .fontWeight(.light)
                         .foregroundColor(.pink)
                         .font(.title)
-                    HStack{
-                        TextField("Entrez un element", text: $addPref)
-                        Button(action : {
-                            if self.addPref.isEmpty {
-                                self.isShowingAlert.toggle()
-                            } else {
-                                let newPref = UserPref.init(context: self.MOC)
-                                newPref.name = self.addPref
-                                newPref.ban = true
-                                do {
-                                    try self.MOC.save()
-                                } catch {
-                                    print(error)
+                    
+                                VStack {
+                                    HStack {
+                                        HStack {
+                                            TextField ("Search", text: $searchIntolerance, onEditingChanged: { isEditing in self.showCancelButton = true
+                                            }, onCommit : {
+                                                print("onCommit")
+                                            }).foregroundColor(.primary)
+                                            Button(action: { self.searchIntolerance = ""
+                                            }) {
+                                                Image(systemName: "xmark.circle.fill").opacity(searchIntolerance == "" ? 0 : 1)
+                                            }
+                                        }
+                                        .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
+                                        .foregroundColor(.secondary)
+                                        .background(Color(.secondarySystemBackground))
+                                        .cornerRadius(10.0)
+                                        
+                                        if showCancelButton {
+                                            Button("Cancel"){
+                                                UIApplication.shared.endEditing(true)
+                                                self.searchIntolerance = ""
+                                                self.showCancelButton = false
+                                            }
+                                            .foregroundColor(Color(.systemBlue))
+                                        }
+                                    }
+                                    .padding(.horizontal)
+                                .navigationBarHidden(showCancelButton)
+                                    
+                                    List {
+                                        ForEach(vegetablePref.filter{$0.hasPrefix(searchIntolerance) || searchIntolerance == ""}, id:\.self) {
+                                            searchText in Button(action: {
+                                                self.searchIntolerance = searchText
+                                                if self.searchIntolerance == searchText{
+                                                    self.intolerances.append(searchText)
+                                                }
+                                            }, label: {Text(searchText)})
+                                        }
+                                    }
+                                .navigationBarTitle(Text(""))
+                                .resignKeyboardOnDragGesture()
+                                    
+                                    ForEach(intolerances, id: \.self){
+                                        intolerance in Text(intolerance)
+                                    }
                                 }
-                                self.addPref = ""
-                            }
-                            
-                        }, label: {Text("Ajouter")}).alert(isPresented: $isShowingAlert){
-                            Alert(title: Text("Champ vide"), message: Text("Veuillez entrez un ingrédient"), dismissButton: .default(Text("Ok")))
+                            }.navigationBarTitle(Text("Profil"))
                         }
                     }
-                    Divider()
-
-
-                        
-                        .navigationBarTitle(Text("\(titleName)").font(.title), displayMode: .inline)
-                }.padding()
-                Picker(selection: $banPref, label: Text("")){
-                    ForEach(0..<vegetablePref.count){
-                        
-                        Text(vegetablePref[$0]).tag($0)
-                            .onTapGesture {
-                                let newPref = pref(pref: vegetablePref[0], not: true)
-                                tablePref.append(newPref)
-                        }
-                        
-                    }
-                }.labelsHidden()
-                Spacer()
             }
+    
+            struct IntoleranceView: View {
+                @Binding var toogle1 : Bool
+                @Binding var toogle2 : Bool
+                @Binding var toogle3 : Bool
+                var body: some View {
+                    VStack(alignment: .leading) {
+                        
+                        
+                        Text("Aliments bannis")
+                            .fontWeight(.light)
+                            .foregroundColor(Color.pink)
+                            .font(.title)
+                        
+                        
+                        Toggle(isOn: $toogle1) {
+                            Text("Sucre")}
+                        Divider()
+                        
+                        Toggle(isOn: $toogle2) {
+                            Text("Glucose")}
+                        Divider()
+                        
+                        Toggle(isOn: $toogle3) {
+                            Text("Lactose")}
+                        Divider()
+                        
+                        
+                        
+                    }.navigationBarTitle(Text("Profil"))
+                }
+            }
+
             
-        }        .onAppear{
-            let navigationBarAppearance = UINavigationBarAppearance()
             
             
-            navigationBarAppearance.backgroundColor = self.baseColorUi
+        }
+
+
+
+struct Profil_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+        Profil()
+            .environment(\.colorScheme,.light)
             
-            navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font : UIFont.systemFont(ofSize: 30.0)]
-            
-            navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            
-            
-            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        Profil()
+            .environment(\.colorScheme,.dark)
         }
     }
 }
 
-struct Profil_Previews: PreviewProvider {
-    static var previews: some View {
-        Profil(colorUi: UIColor.systemPink, baseColor: Color(UIColor.systemPink), titleName: "Profil")
+extension UIApplication {
+    func endEditing(_ force: Bool) {
+        self.windows
+            .filter{$0.isKeyWindow}
+        .first?
+        .endEditing(force)
     }
 }
+
+struct ResignKeyboardOnDragGesture: ViewModifier {
+    var gesture = DragGesture().onChanged{_ in
+        UIApplication.shared.endEditing(true)
+    }
+    func body(content: Content) -> some View {
+        content.gesture(gesture)
+}
+}
+
+extension View {
+    func resignKeyboardOnDragGesture() -> some View {
+        return modifier(ResignKeyboardOnDragGesture())
+    }
+}
+
+
