@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,17 @@
 		B354EE87246D2F3100E22F76 /* UserPref+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */; };
 		B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */; };
 		B354EEAD246E9A3F00E22F76 /* ToggleViewProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354EEAC246E9A3F00E22F76 /* ToggleViewProfil.swift */; };
+		E22F74FC247C05BA0056D1FC /* ApiPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F74FB247C05BA0056D1FC /* ApiPrint.swift */; };
+		E22F7500247C065C0056D1FC /* CBScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F74FF247C065C0056D1FC /* CBScanner.swift */; };
+		E22F7502247C06AA0056D1FC /* ModalScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F7501247C06AA0056D1FC /* ModalScanner.swift */; };
+		E22F7504247C07480056D1FC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F7503247C07480056D1FC /* LoadingView.swift */; };
+		E22F7506247C076F0056D1FC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F7505247C076F0056D1FC /* LottieView.swift */; };
+		E22F750A247C08EA0056D1FC /* 8998-scanning.json in Resources */ = {isa = PBXBuildFile; fileRef = E22F7508247C08EA0056D1FC /* 8998-scanning.json */; };
+		E22F750B247C08EA0056D1FC /* 4692-scanner.json in Resources */ = {isa = PBXBuildFile; fileRef = E22F7509247C08EA0056D1FC /* 4692-scanner.json */; };
+		E22F750E247C09C80056D1FC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E22F750D247C09C80056D1FC /* Lottie */; };
+		E22F7512247C0D8A0056D1FC /* ViewScooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F7511247C0D8A0056D1FC /* ViewScooks.swift */; };
+		E22F7515247C0E970056D1FC /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F7514247C0E970056D1FC /* ImageCarouselView.swift */; };
+		E22F7517247C0EC60056D1FC /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F7516247C0EC60056D1FC /* Carousel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +57,16 @@
 		B354EE85246D2F3100E22F76 /* UserPref+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B354EE86246D2F3100E22F76 /* UserPref+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserPref+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B354EEAC246E9A3F00E22F76 /* ToggleViewProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewProfil.swift; sourceTree = "<group>"; };
+		E22F74FB247C05BA0056D1FC /* ApiPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPrint.swift; sourceTree = "<group>"; };
+		E22F74FF247C065C0056D1FC /* CBScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBScanner.swift; sourceTree = "<group>"; };
+		E22F7501247C06AA0056D1FC /* ModalScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalScanner.swift; sourceTree = "<group>"; };
+		E22F7503247C07480056D1FC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E22F7505247C076F0056D1FC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		E22F7508247C08EA0056D1FC /* 8998-scanning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8998-scanning.json"; sourceTree = "<group>"; };
+		E22F7509247C08EA0056D1FC /* 4692-scanner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4692-scanner.json"; sourceTree = "<group>"; };
+		E22F7511247C0D8A0056D1FC /* ViewScooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewScooks.swift; sourceTree = "<group>"; };
+		E22F7514247C0E970056D1FC /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
+		E22F7516247C0EC60056D1FC /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E22F750E247C09C80056D1FC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,16 +102,23 @@
 		B343EB67246AA54F00531296 /* Cook */ = {
 			isa = PBXGroup;
 			children = (
+				E22F7513247C0E2B0056D1FC /* Carousel */,
+				E22F74FE247C06410056D1FC /* Scan */,
+				E22F74FA247C059E0056D1FC /* Api */,
 				B343EB81246AA59B00531296 /* ViewModels */,
 				B343EB87246AA63F00531296 /* Models */,
 				B343EB84246AA60500531296 /* View */,
 				B343EB68246AA54F00531296 /* AppDelegate.swift */,
+				E22F7511247C0D8A0056D1FC /* ViewScooks.swift */,
 				B343EB6A246AA54F00531296 /* SceneDelegate.swift */,
 				B343EB6F246AA54F00531296 /* ContentView.swift */,
 				B343EB71246AA55200531296 /* Assets.xcassets */,
 				B343EB76246AA55200531296 /* LaunchScreen.storyboard */,
 				B343EB79246AA55200531296 /* Info.plist */,
 				B343EB6C246AA54F00531296 /* Cook.xcdatamodeld */,
+				E22F7503247C07480056D1FC /* LoadingView.swift */,
+				E22F7505247C076F0056D1FC /* LottieView.swift */,
+				E22F7507247C08EA0056D1FC /* Lottie */,
 				B343EB73246AA55200531296 /* Preview Content */,
 			);
 			path = Cook;
@@ -132,6 +161,41 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E22F74FA247C059E0056D1FC /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				E22F74FB247C05BA0056D1FC /* ApiPrint.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		E22F74FE247C06410056D1FC /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				E22F74FF247C065C0056D1FC /* CBScanner.swift */,
+				E22F7501247C06AA0056D1FC /* ModalScanner.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		E22F7507247C08EA0056D1FC /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				E22F7508247C08EA0056D1FC /* 8998-scanning.json */,
+				E22F7509247C08EA0056D1FC /* 4692-scanner.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		E22F7513247C0E2B0056D1FC /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				E22F7514247C0E970056D1FC /* ImageCarouselView.swift */,
+				E22F7516247C0EC60056D1FC /* Carousel.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +212,9 @@
 			dependencies = (
 			);
 			name = Cook;
+			packageProductDependencies = (
+				E22F750D247C09C80056D1FC /* Lottie */,
+			);
 			productName = Cook;
 			productReference = B343EB65246AA54F00531296 /* Cook.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +243,9 @@
 				Base,
 			);
 			mainGroup = B343EB5C246AA54F00531296;
+			packageReferences = (
+				E22F750C247C09C80056D1FC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = B343EB66246AA54F00531296 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B343EB78246AA55200531296 /* LaunchScreen.storyboard in Resources */,
+				E22F750B247C08EA0056D1FC /* 4692-scanner.json in Resources */,
 				B343EB75246AA55200531296 /* Preview Assets.xcassets in Resources */,
+				E22F750A247C08EA0056D1FC /* 8998-scanning.json in Resources */,
 				B343EB72246AA55200531296 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,19 +276,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B343EB93246C2BDB00531296 /* Profil.swift in Sources */,
+				E22F7506247C076F0056D1FC /* LottieView.swift in Sources */,
 				B343EB69246AA54F00531296 /* AppDelegate.swift in Sources */,
 				B354EE87246D2F3100E22F76 /* UserPref+CoreDataClass.swift in Sources */,
 				B343EB6E246AA54F00531296 /* Cook.xcdatamodeld in Sources */,
 				B343EB86246AA63000531296 /* TabBarView.swift in Sources */,
 				B354EE88246D2F3100E22F76 /* UserPref+CoreDataProperties.swift in Sources */,
+				E22F7517247C0EC60056D1FC /* Carousel.swift in Sources */,
 				B343EB80246AA56200531296 /* ListView.swift in Sources */,
+				E22F7500247C065C0056D1FC /* CBScanner.swift in Sources */,
 				B343EB70246AA54F00531296 /* ContentView.swift in Sources */,
 				B354EEAD246E9A3F00E22F76 /* ToggleViewProfil.swift in Sources */,
 				B343EB8F246BD9B700531296 /* SegController.swift in Sources */,
+				E22F7515247C0E970056D1FC /* ImageCarouselView.swift in Sources */,
+				E22F7512247C0D8A0056D1FC /* ViewScooks.swift in Sources */,
+				E22F7502247C06AA0056D1FC /* ModalScanner.swift in Sources */,
 				B343EB8B246AA69600531296 /* SearchBar.swift in Sources */,
 				B343EB83246AA5E100531296 /* CardView.swift in Sources */,
+				E22F74FC247C05BA0056D1FC /* ApiPrint.swift in Sources */,
 				B343EB6B246AA54F00531296 /* SceneDelegate.swift in Sources */,
 				B343EB89246AA66B00531296 /* Recipe.swift in Sources */,
+				E22F7504247C07480056D1FC /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Cook/Preview Content\"";
-				DEVELOPMENT_TEAM = V87BXCTAB3;
+				DEVELOPMENT_TEAM = T37Y8MBU7Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Cook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Cook/Preview Content\"";
-				DEVELOPMENT_TEAM = V87BXCTAB3;
+				DEVELOPMENT_TEAM = T37Y8MBU7Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Cook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +490,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E22F750C247C09C80056D1FC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E22F750D247C09C80056D1FC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E22F750C247C09C80056D1FC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B343EB6C246AA54F00531296 /* Cook.xcdatamodeld */ = {

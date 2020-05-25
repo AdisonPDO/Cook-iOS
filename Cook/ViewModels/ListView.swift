@@ -21,14 +21,6 @@ struct RoundedCorner: Shape {
     }
 }
 
-struct Response : Codable {
-    var rersults : [Result]
-}
-struct Result : Codable {
-    var calories : Int
-    var platNom : String
-    var pic : URL
-}
 
 
 
@@ -61,7 +53,7 @@ struct ListView: View {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
     
-    @State private var Results = [Result]()
+//    @State private var Results = [Result]()
     @State var search = ""
     @State var segSearch = "Pomm"
     var body: some View {
