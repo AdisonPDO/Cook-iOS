@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
     //var recipMinPic = Image()
     var recipeName : String
-    var like : Bool
+   @State var like : Bool
     var bordColor : Color
     var recipePic : String?
     
@@ -18,7 +18,7 @@ struct CardView: View {
         ZStack{
             Image(String(recipePic ?? "default")).resizable()
                 .frame(width: 150.0, height: 150.0)
-            .cornerRadius(25)
+                .cornerRadius(25)
                 .overlay(
                     ZStack{
                         Rectangle()
@@ -28,18 +28,25 @@ struct CardView: View {
                         Text(recipeName)
                             .foregroundColor(.white)
                     }
-                    , alignment: .bottom)
+                    , alignment: .bottom).buttonStyle(PlainButtonStyle())
                 .overlay(
+                    Button(action: {
+                        self.like.toggle()
+                    }, label: {
+                        Image(systemName: like ? "heart.fill" : "heart")
+                        .resizable()
+                        .frame(minWidth: 20, idealWidth: 20, maxWidth: 20, minHeight: 20, idealHeight: 20, maxHeight: 20)
+                            .padding()
+                            .foregroundColor(.red)
+                        
+                    })
                     
-                    Image(systemName: like ? "heart.fill" : "heart")
-                        .padding()
-                        .foregroundColor(.red)
-                    , alignment: .topTrailing)
+                , alignment: .topTrailing)
             
             
             
         }
-    .padding()
+        .padding()
     }
 }
 

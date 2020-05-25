@@ -139,3 +139,4 @@ struct Profil_Previews: PreviewProvider {
         Profil(colorUi: UIColor.systemPink, baseColor: Color(UIColor.systemPink), titleName: "Profil")
     }
 }
+

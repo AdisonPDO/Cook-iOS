@@ -8,125 +8,132 @@
 
 import SwiftUI
 
+
 struct cards: View {
-   var body: some View {
+    let recipetype: recipeType
+    
+    
+    var body: some View {
         
         
-        NavigationView{
+        
+        
+        
+        ZStack{
             
+            Image(recipetype.pic)
+                .resizable()
+                .scaledToFill()
+                .clipped()
+                .blur(radius: 10)
+                .edgesIgnoringSafeArea(.bottom)
             
-            ZStack{
-                
-                Image("Orloff")
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
-                    .blur(radius: 10)
-                    .edgesIgnoringSafeArea(.bottom)
-                
-                VStack{
-                    
-                    Card()
-                    
-                }
-            }.navigationBarTitle("Rôti Orloff", displayMode: .inline).navigationBarItems(trailing: Button(action:{
-                
-            }, label:{
-                Image(systemName: "heart").accentColor(.white)
-            })).labelsHidden()
-            
+            VStack{
+
+                Card(recipetype: recipetype)
+
+            }
             
         }
-        .onAppear{
-            let navigationBarAppearance = UINavigationBarAppearance()
             
-            navigationBarAppearance.backgroundColor = .systemPink
-            
-            navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            
-            navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            
-            
-            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-            
-            
+            //  }
+            .onAppear{
+                let navigationBarAppearance = UINavigationBarAppearance()
+                
+                navigationBarAppearance.backgroundColor = .systemPink
+                
+                navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+                
+                navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+                
+                
+                UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+                UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+                UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+                
+                
         }
+        
     }
 }
 
 struct cards_Previews: PreviewProvider {
     static var previews: some View {
-        cards()
+        cards(recipetype: recipeList[0])
     }
 }
 
 struct Card: View {
-    var colorborder = Color(UIColor.systemPink)
-    
-    let menus = ["Ingrédients", "Preparation"]
+    @State var colorborder = Color(UIColor.systemPink)
+    @State var menus = ["Ingrédients", "Preparation"]
     @State private var index = 0
-    private var ingredients = ["• Veau", "• Tomates", "• Tranches de Bacon", "• Tranches de Chedar"]
-    private var preparations = ["• Couper le veau en deux", "• Placer une tranche de Bacon", "• Placer une tranche de Chedar", "• Placer une tranche de tomate", "• Placer une tranche de tomate", "• Placer une tranche de Fromage"]
-    
-    
+    @State var likes = false
+
+    let recipetype: recipeType
+
+
     var body: some View {
         VStack{
-            
-            Image("Orloff")
+
+            Image(String(recipetype.pic))
                 .resizable()
                 .clipped()
                 .frame(width: 300,height:200)
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(30, corners: [.topLeft, .topRight])
-            
-            
+
+
             VStack(alignment: .center, spacing: 3){
-                
-                HStack(spacing: 40){
-                    
-                    Text("Temps")
-                        .foregroundColor(.white)
-                    Text("Portions")
-                        .foregroundColor(.white)
-                    Text("Calories")
-                        .foregroundColor(.white)
+
+                HStack(spacing: 10){
+
+
+                    VStack{
+                        Text("Temps")
+                            .foregroundColor(.white)
+                        Text(self.recipetype.time)
+                            .foregroundColor(.white)
+
+                    }
+                    VStack{
+                        Text("Portions")
+                            .foregroundColor(.white)
+                        Text(self.recipetype.part)
+                            .foregroundColor(.white)
+
+                    }
+                    VStack{
+                        Text("Calories")
+                            .foregroundColor(.white)
+                        Text(self.recipetype.calories)
+                            .foregroundColor(.white)
+                    }
                 }
-                
-                HStack(spacing: 85){
-                    Text("1h26")
-                        .foregroundColor(.white)
-                    Text("6")
-                        .foregroundColor(.white)
-                    Text("906")
-                        .foregroundColor(.white)
-                    
-                }
-                
-                }
+
+            }
             .background(
                 Rectangle()
                     .fill(colorborder)
                     .frame(width: 301, height: 130.0)
                     .clipShape(RoundedCorner(radius: 25.0, corners: [.topLeft, .topRight])))
-            
+
             VStack{
                 SegmentedControl(_index: $index, backgroundColor: .systemPink, textColor: .white, items: menus).frame(width: 15, height: 10)
                     .pickerStyle(SegmentedPickerStyle())
-                
+
                 VStack(alignment: .trailing, spacing: 10){
                     ScrollView{
                         if index == 0{
-                            ForEach(ingredients, id: \.self) { ingredient  in
-                                Text(ingredient).padding(.bottom)
+                            ForEach(recipetype.ingredients.indices, id: \.self) { ingredient  in
+
+                                Text("\(String(format: "%.2f",Double   (self.recipetype.ingredients[ingredient].content ?? 0)))\(self.recipetype.ingredients[ingredient].measured ?? "") \(self.recipetype.ingredients[ingredient].name)").padding(.bottom)
                             }
-                        } else {ForEach(preparations, id: \.self) { preparation in
-                                Text(preparation).padding(.bottom)
+                        } else {ForEach(recipetype.recipeSteps.indices, id: \.self) { preparation in
+                            Text(self.recipetype.recipeSteps[preparation]).padding(.bottom)
                             }
                         }
                     }.padding()
-                    
+
                 }.frame(maxWidth: .infinity, maxHeight: 200)
             }
             .padding(30)
@@ -134,10 +141,23 @@ struct Card: View {
                 RoundedRectangle(cornerRadius: 30)
                     .fill(Color.offWhite)
                     .frame(maxWidth: 305, maxHeight:250)
-                    
+
                     .clipShape(RoundedCorner(radius: 30.0, corners: [.topLeft, .topRight])).padding(.horizontal)
                 , alignment: .top)
-        }
+
+
+        }.navigationBarTitle(Text(recipetype.name), displayMode: .inline)
+                .navigationBarItems(trailing: Button(action:{
+        
+                }, label:{
+                    Image(systemName: likes ? "heart.fill" : "heart")
+                        .resizable()
+                        .frame(minWidth: 20, idealWidth: 20, maxWidth: 20, minHeight: 20, idealHeight: 20, maxHeight: 20)
+                            .padding()
+                            .foregroundColor(.white)
+        
+                    })).labelsHidden()
+        
         
     }
 }

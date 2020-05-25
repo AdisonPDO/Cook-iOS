@@ -120,8 +120,11 @@ struct ListView: View {
         return  HStack{
             ForEach(recipeChunk, id: \.self) {
                 recipe in
-                CardView(recipeName: recipe.name, like: false, bordColor: self.baseColor, recipePic: recipe.pic)
                 
+                    NavigationLink(destination: cards(recipetype: recipe)){
+                        CardView(recipeName: recipe.name, like: false, bordColor: self.baseColor, recipePic: recipe.pic)
+                        
+                    }.buttonStyle(PlainButtonStyle())
             }
         }
     }

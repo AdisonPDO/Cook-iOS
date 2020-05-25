@@ -23,7 +23,9 @@ struct recipeType : Hashable{
     var part : String
     var calories : String
     var pic : String
+    var background : String
 }
+
 
 extension Array {
     func chunked(into size: Int) -> [[Element]] {
@@ -40,7 +42,7 @@ var recipeList = [
         ingredientsType(name: "Gousses d'ail", measured: "", content: 2),
         ingredientsType(name: "Crème", measured: "cl", content: 30),
         ingredientsType(name: "Beure", measured: "g", content: 100),
-        ingredientsType(name: "Lait", measured: "l", content: 1),
+        ingredientsType(name: "Lait", measured: "L", content: 1),
         ingredientsType(name: "Muscade"),
         ingredientsType(name: "Sel"),
         ingredientsType(name: "Poivre")
@@ -51,7 +53,7 @@ var recipeList = [
             "Préchauffer le four à 180°C (thermostat 6) et beurrer un plat à gratin.",
             "Placer les pommes de terre égouttées dans le plat. Les recouvrir de crème, puis disposer des petites noix de beurre sur le dessus.",
             "Enfourner pour 50 min à 1 heure de cuisson."
-    ], time: "1h25",part: "6", calories: "132cal-100g", pic: "gratin"),
+    ], time: "1h25",part: "6", calories: "132cal-100g", pic: "gratin",background: "gratin"),
     recipeType(name: "Saucisses aux lentilles", ingredients: [
         ingredientsType(name: "Lentilles vertes", measured: "g", content: 250),
         ingredientsType(name: "Saucisses", content: 4),
@@ -65,7 +67,7 @@ var recipeList = [
             "Ajoutez les lardons, les oignons blancs et les lentilles dans le faitout des saucisses. Ne salez pas, les lardons le feront.",
             "Couvrez et faites cuire le tout à feu doux de 20 à 25 min.",
             "Égouttez, retirez le bouquet garni, disposez sur un plat avec un peu de persil haché et servez aussitôt."],
-                                                             time: "55 min", part: "4", calories: "168cal - 100g", pic : "saucisse")
+                                                             time: "55 min", part: "4", calories: "168cal - 100g", pic : "saucisse", background: "saucisse")
 ]
 
 var vegetablePref = ["Tomate","Pomme de terre", "Aubergine", "Asperge", "Navet", "Banane", "Concombre"]
