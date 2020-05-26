@@ -77,6 +77,6 @@ struct ImageCarouselView_Previews: PreviewProvider {
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .clipped()
             }
-        }.frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
     }
 }

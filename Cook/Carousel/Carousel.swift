@@ -8,15 +8,6 @@
 
 import SwiftUI
 
-extension Font {
-    static func avenirNext(size: Int) -> Font {
-        return Font.custom("Avenir Next", size: CGFloat(size))
-    }
-    
-    static func avenirNextRegular(size: Int) -> Font {
-        return Font.custom("AvenirNext-Regular", size: CGFloat(size))
-    }
-}
 
 struct Carousel: View {
     var body: some View {
@@ -29,7 +20,7 @@ struct Carousel: View {
                         VStack (alignment: .center) {
                             
                             Spacer()
-                            Image("default")
+                            Image("image_carousel_1")
                                 .clipShape(Circle())
                                 .overlay(
                                     Circle().stroke(Color.orange,lineWidth: 10))
@@ -39,7 +30,7 @@ struct Carousel: View {
                                 .font(Font.custom("Noteworthy", size: 35))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                            Spacer()
+                           
                             Text("Scooks est une appli qui vous aide à choisir les bons plats en fonction de vos préférences.")
                                .multilineTextAlignment(.center)
                                 .font(.title)
@@ -78,7 +69,7 @@ struct Carousel: View {
                         VStack (alignment: .center) {
                             
                             Spacer()
-                            Image("gratin")
+                            Image("image_carousel_2")
                                 .clipShape(Circle())
                                 .overlay(
                                     Circle().stroke(Color.pink,lineWidth: 10))
@@ -88,7 +79,7 @@ struct Carousel: View {
                                 .font(Font.custom("Noteworthy", size: 35))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                            Spacer()
+                         
                             Text("Scooks scanne vos produits et vous propose des plats adaptés en fonction de vos préférences.")
                                 .multilineTextAlignment(.center)
                                 .font(.title)
@@ -127,7 +118,7 @@ struct Carousel: View {
                         VStack () {
                             
                             Spacer()
-                            Image("saucisse")
+                            Image("image_carousel_3")
                                 .clipShape(Circle())
                                 .overlay(
                                     Circle().stroke(Color.orange,lineWidth: 10))
@@ -137,7 +128,7 @@ struct Carousel: View {
                                 .font(Font.custom("Noteworthy", size: 35))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                            Spacer()
+                           
                             Text("Scooks vous recommande de meilleures alternatives.\n\n C'est parti")
                                 .multilineTextAlignment(.center)
                                 
