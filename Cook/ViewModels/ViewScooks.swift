@@ -26,7 +26,7 @@ struct ViewScooks: View {
             @State var products = [Product]()
             var body: some View {
                     
-                NavigationView {
+//                NavigationView {
                     VStack {
                         
                     
@@ -50,32 +50,32 @@ struct ViewScooks: View {
                         
                         
                     }
-                    .navigationBarTitle("Les Listes")
-                    .frame(alignment : .center)
-                    .navigationBarItems(trailing:
-                        HStack {
-                            Button(action: {
-            //                self.showOrderSheet = true
-                        }, label: {
-                            Image(systemName: "plus.circle")
-                                .resizable()
-                                .frame(width: 32, height: 32, alignment: .center)
-                            })
-                            Button(action: {
-                                            self.showCarousel = true
-                                        }, label: {
-                                            Image(systemName: "info.circle")
-                                                .resizable()
-                                                .frame(width: 32, height: 32, alignment: .center)
-                                            })
-                            .sheet(isPresented: $showCarousel, content: {
-                                 //                    Text("Scannez vos ingrédients")
-                                  Carousel()
-                            })
-                    }
-                    )
+//                    .navigationBarTitle("Les Listes")
+//                    .frame(alignment : .center)
+//                    .navigationBarItems(trailing:
+//                        HStack {
+//                            Button(action: {
+//            //                self.showOrderSheet = true
+//                        }, label: {
+//                            Image(systemName: "plus.circle")
+//                                .resizable()
+//                                .frame(width: 32, height: 32, alignment: .center)
+//                            })
+//                            Button(action: {
+//                                            self.showCarousel = true
+//                                        }, label: {
+//                                            Image(systemName: "info.circle")
+//                                                .resizable()
+//                                                .frame(width: 32, height: 32, alignment: .center)
+//                                            })
+//                            .sheet(isPresented: $showCarousel, content: {
+//                                 //                    Text("Scannez vos ingrédients")
+//                                  Carousel()
+//                            })
+//                    }
+//                    )
                     
-                }
+//                }
                     
                    
                     

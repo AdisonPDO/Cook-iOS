@@ -56,6 +56,9 @@ struct ListView: View {
 //    @State private var Results = [Result]()
     @State var search = ""
     @State var segSearch = "Pomm"
+    @State var showCarousel = false
+    @State var showScan = false
+   
     var body: some View {
         
         return NavigationView{
@@ -80,7 +83,7 @@ struct ListView: View {
                         }
                         
                     } else {
-                        TextField("", text: $segSearch)
+                        ViewScooks()
                     }
                 }
                 
@@ -90,6 +93,28 @@ struct ListView: View {
                 
             }
             .navigationBarTitle(Text(titleName).font(.title), displayMode: .inline)
+                               .navigationBarItems(trailing:
+                                   HStack {
+                                       Button(action: {
+                       //                self.showOrderSheet = true
+                                   }, label: {
+                                       Image(systemName: "plus.circle")
+                                           .resizable()
+                                           .frame(width: 32, height: 32, alignment: .center)
+                                       })
+                                       Button(action: {
+                                                       self.showCarousel = true
+                                                   }, label: {
+                                                       Image(systemName: "info.circle")
+                                                           .resizable()
+                                                           .frame(width: 32, height: 32, alignment: .center)
+                                                       })
+                                       .sheet(isPresented: $showCarousel, content: {
+                                            //                    Text("Scannez vos ingrédients")
+                                             Carousel()
+                                       })
+                               }
+                               )
         }
         .onAppear{
             let navigationBarAppearance = UINavigationBarAppearance()

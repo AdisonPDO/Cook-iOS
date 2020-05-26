@@ -109,7 +109,6 @@
 				B343EB87246AA63F00531296 /* Models */,
 				B343EB84246AA60500531296 /* View */,
 				B343EB68246AA54F00531296 /* AppDelegate.swift */,
-				E22F7511247C0D8A0056D1FC /* ViewScooks.swift */,
 				B343EB6A246AA54F00531296 /* SceneDelegate.swift */,
 				B343EB6F246AA54F00531296 /* ContentView.swift */,
 				B343EB71246AA55200531296 /* Assets.xcassets */,
@@ -138,6 +137,7 @@
 				B343EB7F246AA56200531296 /* ListView.swift */,
 				B343EB8E246BD9B700531296 /* SegController.swift */,
 				B343EB82246AA5E100531296 /* CardView.swift */,
+				E22F7511247C0D8A0056D1FC /* ViewScooks.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
